@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>unity styles - Book Your Appointment</title>
+    <title>UnityStyles Salon</title>
     <link rel="stylesheet" href="salon.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
     <header>
         <nav>
@@ -15,11 +17,10 @@
                 <span>unitystyles</span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html"></i> Home</a></li>
-                <li><a href="#services"></i> Services</a></li>
-                <li><a href="#booking"></i> Book Now</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="login.html" class="active">Login</a></li>
+                <li><a href="salon.html"></i>Home</a></li>
+                <li><a href="#services"></i>Services</a></li>
+                <li><a href="#booking"></i>Book Now</a></li>
+                <li id="auth"></li>
             </ul>
         </nav>
     </header>
@@ -31,5 +32,176 @@
             <a href="#booking" class="btn">Book an Appointment</a>
         </div>
     </section>
+
+    <section class="container" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-info">Select a Gender</p>
+        <div class="gender-selection">
+            <div class="gender" data-gender="men">
+                <img src="./images/boy.png" alt="men">
+                <span>Men</span>
+            </div>
+            <div class="gender" data-gender="women">
+                <img src="./images/woman.png" alt="women">
+                <span>Women</span>
+            </div>
+        </div>
+
+        <div class="services" id="men-services">
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Haircut</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Haircut & Styling</h3>
+                    <p>Classic cuts with modern styling</p>
+                    <p class="price">₹200+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Beard</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Beard Grooming</h3>
+                    <p>Trimming, shaping & conditioning</p>
+                    <p class="price">₹120+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Hair Coloring</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Hair Coloring</h3>
+                    <p>Grey coverage or stylish highlights</p>
+                    <p class="price">₹150+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Facial</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Men's Facial</h3>
+                    <p>Oil control & deep cleansing</p>
+                    <p class="price">₹160+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Massage</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Head Massage</h3>
+                    <p>Stress relief & scalp nourishment</p>
+                    <p class="price">₹220+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Hair Spa</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Hair Spa</h3>
+                    <p>Hydration & repair for healthier hair</p>
+                    <p class="price">₹800+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="services" id="women-services">
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Haircut</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Haircut & Styling</h3>
+                    <p>Trendy cuts and blow-dry finish</p>
+                    <p class="price">₹250+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Hair Coloring</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Hair Coloring</h3>
+                    <p>Highlights, balayage, or full color</p>
+                    <p class="price">₹200+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Manicure & Pedicure</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Manicure & Pedicure</h3>
+                    <p>Nail care and relaxing foot spa</p>
+                    <p class="price">₹400+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Facial</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Facial Treatment</h3>
+                    <p>Deep cleansing & skin rejuvenation</p>
+                    <p class="price">₹300+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Hair Spa</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Hair Spa</h3>
+                    <p>Intense nourishment for smooth, shiny hair</p>
+                    <p class="price">₹1000+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-title">
+                    <h1>Bridal Makeup</h1>
+                </div>
+                <div class="service-content">
+                    <h3>Bridal Makeup</h3>
+                    <p>Professional bridal makeover & styling</p>
+                    <p class="price">₹5000+</p>
+                    <button class="btn select-service">Select</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="/components/footer/footer.js"></script>
+    <script src="salon.js"></script>
 </body>
+
 </html>

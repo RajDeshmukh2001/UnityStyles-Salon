@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnityStyles Salon - Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/images/scissors.png" alt="scissors">
+                <a href="/salon.html">unitystyles</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to UnityStyles Salon</h1>
+            <p>Login to manage your appointments and enjoy exclusive member benefits</p>
+            <a href="#login-form" class="btn">Login Now</a>
+        </div>
+    </section>
+
+    <div class="login-container">
+        <form class="login-form" id="login-form">
+            <h2>Login</h2>
+
+            <div class="form-group">
+                <label for="login-email">Email <span>*</span></label>
+                <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="login-password">Password <span>*</span></label>
+                <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn" style="width: 100%;">Login</button>
+            </div>
+
+            <p class="login-error" id="login-error"></p>
+
+            <div class="form-footer">
+                <p>Don't have an account? <span onclick="openRegister()">Register here</span></p>
+            </div>
+        </form>
+    </div>
+
+    <div class="register-container">
+        <form class="register-form" id="register-form">
+            <h2>Register</h2>
+
+            <div class="form-group">
+                <label for="fullname">Fullname <span>*</span></label>
+                <input type="text" id="fullname" class="form-control" placeholder="Enter your fullname" required>
+                <p class="message" id="fullname-error"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="register-email">Email <span>*</span></label>
+                <input type="email" id="register-email" class="form-control" placeholder="Enter your email" required>
+                <p class="message" id="register-email-error"></p>
+            </div>
+            
+            <div class="form-group">
+                <label for="register-password">Password <span style="color: grey; font-size: 12px; "> (minimum 6 characters) </span><span>*</span></label>
+                <input type="password" id="register-password" class="form-control" placeholder="Enter your password" required>
+                <p class="message" id="register-password-error"></p>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn" style="width: 100%;">Register</button>
+            </div>
+
+            <div class="form-footer">
+                <p>Already have an account? <span onclick="openLogin()">Login here</span></p>
+            </div>
+        </form>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="/components/footer/footer.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
