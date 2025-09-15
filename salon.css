@@ -32,6 +32,12 @@ header {
     padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 nav {
@@ -63,11 +69,12 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
+    align-items: center;
+    gap: 2rem;
 }
 
 .nav-links li {
     cursor: pointer;
-    margin-left: 2rem;
     transition: all 0.3s ease;
 }
 
@@ -87,9 +94,66 @@ nav {
     color: var(--light);
 }
 
+.nav-links .user-container {
+    position: relative;
+}
+
+.nav-links .user-container i.user {
+    border: 2px solid var(--light);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-links .user-container .user-dropdown {
+    opacity: 0;
+    position: absolute;
+    top: 42px;
+    left: -32px;
+    background: #fff;
+    color: var(--dark);
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px); /* start hidden above */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* prevent clicks when hidden */
+}
+
+.nav-links .user-container .user-dropdown.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-links .user-container .user-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 42px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+.nav-links .user-container .user-dropdown li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.nav-links .user-container .user-dropdown li a, 
+.nav-links .user-container .user-dropdown li span {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 15px;
+}
+
 .hero {
     background: url('https://images.unsplash.com/photo-1590540180006-36971c22e35c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
     height: 80vh;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,7 +217,7 @@ nav {
 
 .section-title {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--secondary);
 }
 
@@ -221,7 +285,11 @@ nav {
     display: none;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+}
+
+#men-services {
+    display: grid;
 }
 
 .service-card {
@@ -250,24 +318,296 @@ nav {
     color: var(--light);
 }
 
+.service-title img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .service-content {
     padding: 1.5rem;
 }
 
 .service-content h3 {
     color: var(--secondary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .service-content p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: #666;
+    font-size: 15px;
 }
 
-.price {
+.service-content p.price {
     font-weight: bold;
     color: var(--primary);
-    font-size: 1.2rem;
+    font-size: 20px;
+}
+
+/* Stylists */
+.slider-wrapper {
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+.stylists {
+    gap: 1.6rem;
+    padding: 20px 0;
+}
+
+.stylist-card {
+    width: 280px !important;
+    height: 100% !important;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.stylist-card .staff-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.stylist-card .staff-content .staff-specialty {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 6px;
+}
+
+.stylist-card .staff-content .staff-specialty li {
+    list-style: none;
+    font-size: 14px;
+}
+
+.stylist-card .staff-content .staff-specialty li:first-child {
+    font-weight: 800;
+}
+
+.stylist-card .staff-content p {
+    font-size: 14px;
+}
+
+.stylist-card .staff-content p:last-child {
+    text-align: justify;
+}
+
+.stylist-card .staff-content p span {
+    font-weight: 800;
+}
+
+.swiper-horizontal {
+    &.swiper-rtl .swiper-button-next, &.swiper-rtl~.swiper-button-next, &~.swiper-button-prev, .swiper-button-prev {
+        left: var(--swiper-navigation-sides-offset, 0) !important;
+    }
+}
+
+.swiper-button-next, .swiper-button-prev {
+    width: 26px !important;
+    border-radius: 50%;
+    border: 1px solid #bbb;
+    padding: 6px 0;
+    height: 25px !important;
+    color: #bbb !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    border: 1px solid var(--secondary);
+    color: var(--secondary) !important;
+}
+
+/* Appointment Form */
+.booking-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.selected-service {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group label span {
+    color: var(--error);
+}
+
+.staff-gender-selection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.staff-gender-selection span {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 3px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.staff-gender-selection span:hover {
+    border-color: var(--primary);
+}
+
+.staff-gender-selection span.staff-selected {
+    color: var(--primary);
+    border-color: var(--primary);
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+.staff-gender-selection span.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.staff-gender-selection span.disabled:hover {
+    border-color: #ddd;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.staff-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#staff-selection-women {
+    display: none;
+}
+
+.staff-member {
+    text-align: center;
+    cursor: pointer;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.staff-member:hover {
+    border-color: var(--primary);
+}
+
+.staff-member.selected {
+    color: var(--primary);
+    border-color: var(--primary);
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+.staff-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+    background-color: #ddd;
+    background-position: center;
+    background-size: cover;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+}
+
+.select-date {
+    color: var(--secondary);
+    grid-column: 1/4;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.time-slot {
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-slot:hover {
+    border-color: var(--primary);
+}
+
+.time-slot.selected {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.time-slot.unavailable {
+    background-color: #f8d7da;
+    color: #721c24;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.confirmation {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.confirmation.visible {
+    display: block;
+}
+
+.confirmation h2 {
+    color: var(--success);
+    margin-bottom: 1rem;
+}
+
+.confirmation-details {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 5px;
 }
 
 footer {

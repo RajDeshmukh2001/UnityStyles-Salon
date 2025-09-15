@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UnityStyles Salon</title>
-    <link rel="stylesheet" href="salon.css">
+    <link rel="stylesheet" href="salon.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -13,14 +14,14 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="./images/scissors.png" alt="scissors">
+                <img src="./images/scissors.png" alt="scissors" />
                 <span>unitystyles</span>
             </div>
             <ul class="nav-links">
-                <li><a href="salon.html"></i>Home</a></li>
-                <li><a href="#services"></i>Services</a></li>
-                <li><a href="#booking"></i>Book Now</a></li>
-                <li id="auth"></li>
+                <li><a href="salon.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#stylists">Our Stylists</a></li>
+                <li><a href="#booking">Book Now</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +29,10 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Where Grooming Meets Luxury</h1>
-            <p>From sharp haircuts to relaxing spa treatments, our expert stylists cater to all.</p>
+            <p>
+                From sharp haircuts to relaxing spa treatments, our expert stylists
+                cater to all.
+            </p>
             <a href="#booking" class="btn">Book an Appointment</a>
         </div>
     </section>
@@ -37,12 +41,12 @@
         <h2 class="section-title">Our Services</h2>
         <p class="section-info">Select a Gender</p>
         <div class="gender-selection">
-            <div class="gender" data-gender="men">
-                <img src="./images/boy.png" alt="men">
+            <div class="gender selected" data-gender="men">
+                <img src="./images/boy.png" alt="men" />
                 <span>Men</span>
             </div>
-            <div class="gender" data-gender="women">
-                <img src="./images/woman.png" alt="women">
+            <div class="gender inactive" data-gender="women">
+                <img src="./images/woman.png" alt="women" />
                 <span>Women</span>
             </div>
         </div>
@@ -50,156 +54,442 @@
         <div class="services" id="men-services">
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Haircut</h1>
+                    <img src="https://images.unsplash.com/photo-1602162298022-36d70bdbe924?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Haircut" />
                 </div>
                 <div class="service-content">
                     <h3>Haircut & Styling</h3>
                     <p>Classic cuts with modern styling</p>
                     <p class="price">₹200+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="men" data-service="Haircut & Styling"
+                        data-price="200">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Beard</h1>
+                    <img src="/images/beard.jpg" alt="Beard" />
                 </div>
                 <div class="service-content">
                     <h3>Beard Grooming</h3>
                     <p>Trimming, shaping & conditioning</p>
                     <p class="price">₹120+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="men" data-service="Beard Grooming" data-price="120">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Hair Coloring</h1>
+                    <img src="/images/Mens-Hair-Coloring.png" alt="Hair Coloring" />
                 </div>
                 <div class="service-content">
                     <h3>Hair Coloring</h3>
                     <p>Grey coverage or stylish highlights</p>
                     <p class="price">₹150+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="men" data-service="Hair Coloring" data-price="150">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Facial</h1>
+                    <img src="https://images.unsplash.com/photo-1611169035510-f9af52e6dbe2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Facial" />
                 </div>
                 <div class="service-content">
                     <h3>Men's Facial</h3>
                     <p>Oil control & deep cleansing</p>
                     <p class="price">₹160+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="men" data-service="Men's Facial" data-price="160">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Massage</h1>
+                    <img src="/images/head-massage.jpg" alt="Massage" />
                 </div>
                 <div class="service-content">
                     <h3>Head Massage</h3>
                     <p>Stress relief & scalp nourishment</p>
                     <p class="price">₹220+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="men" data-service="Head Massage" data-price="220">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Hair Spa</h1>
+                    <img src="https://alurabeautysalon.com/wp-content/uploads/2021/07/Hair-Spa-Men.jpg"
+                        alt="Hair Spa" />
                 </div>
                 <div class="service-content">
                     <h3>Hair Spa</h3>
                     <p>Hydration & repair for healthier hair</p>
                     <p class="price">₹800+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="men" data-service="Hair Spa" data-price="800">
+                        Select
+                    </button>
                 </div>
             </div>
-
         </div>
-        
+
         <div class="services" id="women-services">
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Haircut</h1>
+                    <img src="https://images.unsplash.com/photo-1700760934268-8aa0ef52ce0a?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Haircut" />
                 </div>
                 <div class="service-content">
                     <h3>Haircut & Styling</h3>
                     <p>Trendy cuts and blow-dry finish</p>
                     <p class="price">₹250+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="women" data-service="Haircut & Styling"
+                        data-price="250">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Hair Coloring</h1>
+                    <img src="https://images.unsplash.com/photo-1712213396688-c6f2d536671f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Hair Coloring" />
                 </div>
                 <div class="service-content">
                     <h3>Hair Coloring</h3>
                     <p>Highlights, balayage, or full color</p>
                     <p class="price">₹200+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="women" data-service="Hair Coloring"
+                        data-price="200">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Manicure & Pedicure</h1>
+                    <img src="/images/Manicure_&_Pedicure.jpg" alt="Manicure & Pedicure" />
                 </div>
                 <div class="service-content">
                     <h3>Manicure & Pedicure</h3>
                     <p>Nail care and relaxing foot spa</p>
                     <p class="price">₹400+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="women" data-service="Manicure & Pedicure"
+                        data-price="400">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Facial</h1>
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Facial Treatment" />
                 </div>
                 <div class="service-content">
                     <h3>Facial Treatment</h3>
                     <p>Deep cleansing & skin rejuvenation</p>
                     <p class="price">₹300+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="women" data-service="Facial Treatment"
+                        data-price="300">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Hair Spa</h1>
+                    <img src="/images/hair_keratin.jpg" alt="Hair keratin" />
                 </div>
                 <div class="service-content">
-                    <h3>Hair Spa</h3>
+                    <h3>Hair Keratin</h3>
                     <p>Intense nourishment for smooth, shiny hair</p>
                     <p class="price">₹1000+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="women" data-service="Hair Keratin"
+                        data-price="1000">
+                        Select
+                    </button>
                 </div>
             </div>
 
             <div class="service-card">
                 <div class="service-title">
-                    <h1>Bridal Makeup</h1>
+                    <img src="https://images.unsplash.com/photo-1578503803703-e818b8a0e00b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Bridal Makeup" />
                 </div>
                 <div class="service-content">
                     <h3>Bridal Makeup</h3>
                     <p>Professional bridal makeover & styling</p>
                     <p class="price">₹5000+</p>
-                    <button class="btn select-service">Select</button>
+                    <button class="btn select-service" data-gender="women" data-service="Bridal Makeup"
+                        data-price="5000">
+                        Select
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="stylists">
+        <h2 class="section-title">Our Stylists</h2>
+
+        <div class="swiper">
+            <div class="slider-wrapper">
+                <div class="stylists swiper-wrapper">
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=B');"></div>
+                        <div class="staff-content">
+                            <h4>Bhavesh</h4>
+                            <p><span>Specialty: </span>Classic Scissor Cuts, Beard Shaping & Straight Razor Details</p>
+                            <p><span>About: </span>A precision expert with over 8 years of experience, focusing on
+                                foundational styles that enhance a client's features.</p>
+                        </div>
+                    </div>
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=V');"></div>
+                        <div class="staff-content">
+                            <h4>Vikas</h4>
+                            <p><span>Specialty: </span>Skin Fades & Undercuts, Textured Crops & Trendy Styles</p>
+                            <p><span>About: </span>Known for his speed and sharp, modern cuts inspired by contemporary
+                                fashion.</p>
+                        </div>
+                    </div>
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=S');"></div>
+                        <div class="staff-content">
+                            <h4>Sachin</h4>
+                            <p><span>Specialty: </span>Traditional & Corporate Hairstyles, Managing Thick & Curly Hair
+                            </p>
+                            <p><span>About: </span>A veteran stylist who provides timeless, precise cuts and trusted
+                                grooming advice.</p>
+                        </div>
+                    </div>
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=J');"></div>
+                        <div class="staff-content">
+                            <h4>Jawed</h4>
+                            <p><span>Specialty: </span>Luxury Hot Towel Shaves, Beard Grooming & Men's Long Hair</p>
+                            <p><span>About: </span>The master of the classic barbering experience, turning every service
+                                into a relaxing ritual.</p>
+                        </div>
+                    </div>
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=H');"></div>
+                        <div class="staff-content">
+                            <h4>Hiral</h4>
+                            <p><span>Specialty: </span>Balayage & Ombré, Color Correction</p>
+                            <p><span>About: </span>A color artist with a keen eye for creating natural, dimensional
+                                tones
+                                that flatter the skin.</p>
+                        </div>
+                    </div>
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=A');"></div>
+                        <div class="staff-content">
+                            <h4>Anisha</h4>
+                            <p><span>Specialty: </span>Voluminous Blowouts, Wedding & Event Styling</p>
+                            <p><span>About: </span>Creates elegant and romantic styles for special occasions with
+                                meticulous
+                                attention to detail.</p>
+                        </div>
+                    </div>
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=M');"></div>
+                        <div class="staff-content">
+                            <h4>Megha</h4>
+                            <p><span>Specialty: </span>Keratin Smoothing Treatments, Frizz Control & Hair Health</p>
+                            <p><span>About: </span>A hair care specialist who focuses on solutions for smooth,
+                                manageable,
+                                and healthy hair.</p>
+                        </div>
+                    </div>
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=S');"></div>
+                        <div class="staff-content">
+                            <h4>Sapna</h4>
+                            <p><span>Specialty: </span>Precision Haircuts (Bobs, Lob), Face-Framing Layers & Bangs</p>
+                            <p><span>About: </span>A cutting expert who architects beautiful, wearable styles that are
+                                easy
+                                to maintain.</p>
+                        </div>
+                    </div>
+                    <div class="stylist-card swiper-slide">
+                        <div class="staff-avatar"
+                            style=" background-image: url('https://placehold.co/100x100/6a1b9a/white?text=R');"></div>
+                        <div class="staff-content">
+                            <h4>Ritika</h4>
+                            <p><span>Specialty: </span>Hair Extensions, Creative Colors & Braiding</p>
+                            <p><span>About: </span>The salon trendsetter, specializing in bold, statement-making looks
+                                and
+                                adding instant volume.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="booking">
+        <h2 class="section-title">Book Your Appointment</h2>
+
+        <form id="booking-form" class="booking-form">
+            <div class="selected-service">
+                <div class="form-group" style="width: 100%">
+                    <label for="service">Selected Service <span>*</span></label>
+                    <input type="text" id="service" class="form-control" required readonly />
+                </div>
+
+                <div class="form-group" style="width: 100%">
+                    <label for="service-price">Final Price
+                        <span style="font-size: 10px; color: grey">(Including 5% GST)</span>
+                        <span>*</span></label>
+                    <input type="text" id="service-price" class="form-control" readonly />
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="date">Date <span>*</span></label>
+                <input type="date" id="date" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="time-slots">Available Time Slots <span>*</span></label>
+                <div class="time-slots" id="time-slots"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Select Stylist</label>
+                <div class="staff-gender-selection" id="staff-gender-selection">
+                    <span id="men-staff" class="staff-gender staff-selected" data-gender="men">Men</span>
+                    <span id="women-staff" class="staff-gender" data-gender="women">Women</span>
+                </div>
+                <div class="staff-selection" id="staff-selection-men">
+                    <div class="staff-member" data-staff="Bhavesh">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=B');
+                "></div>
+                        <p>Bhavesh</p>
+                    </div>
+                    <div class="staff-member" data-staff="Vikas">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=V');
+                "></div>
+                        <p>Vikas</p>
+                    </div>
+                    <div class="staff-member" data-staff="Sachin">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=S');
+                "></div>
+                        <p>Sachin</p>
+                    </div>
+                    <div class="staff-member" data-staff="Jawed">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=J');
+                "></div>
+                        <p>Jawed</p>
+                    </div>
+                </div>
+                <div class="staff-selection" id="staff-selection-women">
+                    <div class="staff-member" data-staff="Hiral">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=H');
+                "></div>
+                        <p>Hiral</p>
+                    </div>
+                    <div class="staff-member" data-staff="Anisha">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=A');
+                "></div>
+                        <p>Anisha</p>
+                    </div>
+                    <div class="staff-member" data-staff="Megha">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=M');
+                "></div>
+                        <p>Megha</p>
+                    </div>
+                    <div class="staff-member" data-staff="Sapna">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=S');
+                "></div>
+                        <p>Sapna</p>
+                    </div>
+                    <div class="staff-member" data-staff="Ritika">
+                        <div class="staff-avatar" style="
+                  background-image: url('https://placehold.co/100x100/6a1b9a/white?text=R');
+                "></div>
+                        <p>Ritika</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="fullname">Your Fullname <span>*</span></label>
+                <input type="text" id="fullname" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email <span>*</span></label>
+                <input type="email" id="email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number <span>*</span></label>
+                <input type="tel" id="phone" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Special Requests (Optional)</label>
+                <textarea id="notes" class="form-control" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%">
+                Confirm Booking
+            </button>
+        </form>
+
+        <div id="confirmation" class="confirmation">
+            <h2>Appointment Confirmed!</h2>
+            <p>
+                Thank you for booking with unity styles. We've sent a confirmation to
+                your email.
+            </p>
+
+            <div class="confirmation-details">
+                <h3>Appointment Details:</h3>
+                <p id="conf-service"></p>
+                <p id="conf-date"></p>
+                <p id="conf-time"></p>
+                <p id="conf-staff"></p>
+                <p id="conf-price"></p>
+            </div>
+
+            <p>We look forward to seeing you!</p>
         </div>
     </section>
 
     <div id="footer"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="/components/footer/footer.js"></script>
     <script src="salon.js"></script>
 </body>
