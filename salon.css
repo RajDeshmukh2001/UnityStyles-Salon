@@ -56,6 +56,8 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
+    color: var(--light);
+    text-decoration: none;
 }
 
 .logo img {
@@ -116,9 +118,9 @@ nav {
     border-radius: 5px;
     padding: 10px 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-20px); /* start hidden above */
+    transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none; /* prevent clicks when hidden */
+    pointer-events: none;
 }
 
 .nav-links .user-container .user-dropdown.active {
@@ -582,34 +584,115 @@ nav {
     pointer-events: none;
 }
 
-.confirmation {
-    text-align: center;
-    padding: 2rem;
-    background-color: white;
+.slot-info {
+    margin-top: 10px;
+    display: none;
+    align-items: center;
+    gap: 15px;
+}
+
+.slot-availability {
+    font-size: 14px;
+}
+
+.slot-availability:first-of-type i {
+    color: #ddd;
+}
+
+.slot-availability:last-of-type i {
+    color: #f8d7da;
+}
+
+/* User Profile */
+.status-tags {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.status-tags .status {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.status-tags .status.selected {
+    border-bottom: 3px solid var(--secondary);
+}
+
+.appointments {
+    margin-top: 30px;
+}
+
+.appointment {
+    margin-top: 20px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    display: none;
 }
 
-.confirmation.visible {
-    display: block;
+.id-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #666;
 }
 
-.confirmation h2 {
-    color: var(--success);
-    margin-bottom: 1rem;
+.booking-date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.confirmation-details {
-    text-align: left;
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 5px;
+.booking-date h5 span {
+    text-transform: uppercase;
 }
 
+.booking-date h5.cancelled-on {
+    color: var(--error);
+}
+
+.cancel-btn {
+    margin-left: 10px;
+    background-color: var(--error);
+    border: 1px solid red;
+    color: var(--light);
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow:  0 5px 15px rgba(246, 0, 0, 0.1);
+}
+
+.cancel-btn:hover {
+    transform: translateY(-2px);
+}
+
+.appointment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.appointment-details h3 {
+    color: var(--secondary);
+}
+
+.appointment-details h4 {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.appointment-details h5:first-of-type,
+.appointment-details h5:first-of-type span {
+    color: var(--primary);
+}
+
+
+.appointment-details h5 span {
+    color: #666;
+}
+
+/* Footer */
 footer {
     background-color: var(--dark);
     color: white;

@@ -15,11 +15,45 @@
                 <span>unitystyles</span>
             </div>
             <ul class="nav-links">
+                <li><span class="links" data-link="appointments">Appointments</span></li>
+                <li><span class="links" data-link="users">Users</span></li>
                 <li><a href="adminPanel.html" class="admin"></a></li>
                 <li><span onclick="logout()">Logout</span></li>
             </ul>
         </nav>
     </header>
+
+    <section class="container" id="all-appointments">
+        <h2 class="section-title">Appointments</h2>
+
+        <div class="status-tags">
+            <h3 class="status selected">Pending</h3>
+            <h3 class="status">Completed</h3>
+            <h3 class="status">Cancelled</h3>
+        </div>
+
+        <div class="appointments" id="appointments">
+        </div>
+    </section>
+
+    <section class="container" id="all-users">
+        <h2 class="section-title">Users</h2>
+
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Total Appointments</th>
+                    <th>Pending</th>
+                    <th>Completed</th>
+                    <th>Cancelled</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </section>
 
     <script src="adminPanel.js"></script>
 </body>

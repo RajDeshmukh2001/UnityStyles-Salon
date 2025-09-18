@@ -10,15 +10,29 @@
 <body>
     <header>
         <nav>
-            <div class="logo">
+            <a href="/salon.html" class="logo">
                 <img src="../../images/scissors.png" alt="scissors" />
                 <span>unitystyles</span>
-            </div>
+            </a>
             <ul class="nav-links">
+                <li><a href="userProfile.html" class="user-profile"></a></li>
                 <li><span onclick="logout()">Logout</span></li>
             </ul>
         </nav>
     </header>
+
+    <section class="container" id="stylists" style="margin-top: 70px;">
+        <h2 class="section-title">My Appointments</h2>
+
+        <div class="status-tags">
+            <h3 class="status selected">Upcoming</h3>
+            <h3 class="status">Completed</h3>
+            <h3 class="status">Cancelled</h3>
+        </div>
+
+        <div class="appointments" id="appointments">
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>

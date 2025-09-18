@@ -90,3 +90,127 @@ nav {
 .nav-links a.admin i {
     margin-right: 4px;
 }
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--secondary);
+}
+
+/* All Appointments */
+.status-tags {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.status-tags .status {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.status-tags .status.selected {
+    border-bottom: 3px solid var(--secondary);
+}
+
+.appointments {
+    margin-top: 30px;
+}
+
+.appointment {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.id-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #666;
+}
+
+.booking-date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.booking-date h5 span {
+    text-transform: uppercase;
+}
+
+.booking-date h5.cancelled-on {
+    color: var(--error);
+}
+
+.complete-btn {
+    margin-left: 10px;
+    background-color: var(--success);
+    border: 1px solid green;
+    color: var(--light);
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow:  0 5px 15px rgba(246, 0, 0, 0.1);
+}
+
+.complete-btn:hover {
+    transform: translateY(-2px);
+}
+
+.appointment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.appointment-details h3 {
+    color: var(--secondary);
+}
+
+.appointment-details h4 {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.appointment-details h5:first-of-type,
+.appointment-details h5:first-of-type span {
+    color: var(--primary);
+}
+
+.appointment-details h5 span {
+    color: #666;
+}
+
+/* Users */
+#all-users {
+    display: none;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.users-table thead tr {
+    border-radius: 8px;
+    background-color: var(--secondary);
+    color: var(--light);
+}
+
+.users-table th,
+.users-table td {
+    padding: 10px 0;
+    text-align: center;
+}

@@ -372,8 +372,18 @@
             </div>
 
             <div class="form-group">
-                <label for="time-slots">Available Time Slots <span>*</span></label>
+                <label for="time-slots">Select Time Slot <span>*</span></label>
                 <div class="time-slots" id="time-slots"></div>
+                <div class="slot-info" id="slot-info">
+                    <div class="slot-availability">
+                        <i class="ri-checkbox-blank-line"></i>
+                        <span>Available</span>
+                    </div>
+                    <div class="slot-availability">
+                        <i class="ri-checkbox-blank-fill"></i>
+                        <span>Unavailable</span>
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
@@ -466,25 +476,6 @@
                 Confirm Booking
             </button>
         </form>
-
-        <div id="confirmation" class="confirmation">
-            <h2>Appointment Confirmed!</h2>
-            <p>
-                Thank you for booking with unity styles. We've sent a confirmation to
-                your email.
-            </p>
-
-            <div class="confirmation-details">
-                <h3>Appointment Details:</h3>
-                <p id="conf-service"></p>
-                <p id="conf-date"></p>
-                <p id="conf-time"></p>
-                <p id="conf-staff"></p>
-                <p id="conf-price"></p>
-            </div>
-
-            <p>We look forward to seeing you!</p>
-        </div>
     </section>
 
     <div id="footer"></div>

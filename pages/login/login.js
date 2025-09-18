@@ -1,3 +1,13 @@
+// Check user authentication
+(function isUserLoggedIn() {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const isUserAuthenticated = users.find(user => user.isAuthenticated);
+
+    if (isUserAuthenticated) {
+        location.href = "/salon.html";
+    }
+})();
+
 function openRegister() {
     document.querySelector(".register-container").style.display = "flex";
     document.querySelector(".login-container").style.display = "none";

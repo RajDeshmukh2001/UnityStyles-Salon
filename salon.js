@@ -90,7 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
     timeSlotsContainer.innerHTML = `<p class="select-date">Select date to see available slots.</p>`;
     function generateTimeSlots() {
         timeSlotsContainer.innerHTML = "";
-        timeSlotsContainer.style.marginTop = "1rem";
+        timeSlotsContainer.style.marginTop = "0.8rem";
+        document.getElementById("slot-info").style.display = "flex";
         const selectedDate = dateInput.value;
         const currentDate = new Date().toISOString().split("T")[0];
         const currentTime = new Date().getHours();
@@ -108,6 +109,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if (hour <= currentTime && selectedDate === currentDate) {
                 timeSlot.classList.add("unavailable");
             }
+
+            users?.map((user) => {
+                user.appointments?.map((appointment) => {
+                    if (appointment.appointmentDate === dateInput.value && appointment.slot === time) {
+                        timeSlot.classList.add("unavailable");
+                    }
+                })
+            })
 
             timeSlot.addEventListener("click", function () {
                 document.querySelectorAll(".time-slot").forEach((slot) => {
@@ -155,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const user = users.find((user) => user.isAuthenticated);
     const nameInput = document.getElementById("fullname");
     const emailInput = document.getElementById("email");
-
     if (user) {
         nameInput.value = user.fullname;
         emailInput.value = user.email;
@@ -163,18 +171,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Form submission
     const bookingForm = document.getElementById("booking-form");
-    const confirmation = document.getElementById("confirmation");
     bookingForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const selectedService = serviceInput.value;
         const selectedDate = dateInput.value;
         const selectedTime = document.querySelector(".time-slot.selected");
-        // const selectedStaff = document.querySelector(".staff-member.selected");
         const fullname = document.getElementById("fullname").value;
         const email = document.getElementById("email").value;
         const phone = document.getElementById("phone").value;
-        const speacialRequest = document.getElementById("notes").value;
+        const specialRequest = document.getElementById("notes").value;
 
         if (!user) {
             alert("Please login to book an appointment");
@@ -212,16 +218,22 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        const appointmentId = generateId(8);
+
         const appointment = {
-            date: selectedDate,
+            id: appointmentId,
+            appointmentDate: selectedDate,
             service: selectedService,
+            status: "booked",
             totalAmount: finalPrice,
             slot: selectedTime.textContent,
             staff: selectedStaff,
             fullname,
             email,
             phone,
-            speacialRequest
+            specialRequest,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString()
         }
 
         const userIndex = users.findIndex((user) => user.isAuthenticated);
@@ -243,7 +255,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Stylists Swiper slider
-
     const swiper = new Swiper('.slider-wrapper', {
         loop: true,
         autoHeight: true,
@@ -267,6 +278,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+// Generate Appointment ID
+function generateId(length = 8) {
+    let id = "#";
+    for (let i = 0; i < length; i++) {
+        id += Math.floor(Math.random() * 10);
+    }
+    return id;
+}
 
 // Toggle Login and Profile
 function isUserAuthenticated() {
